@@ -1,0 +1,67 @@
+{
+  "entities": {
+    "employee": {
+      "title": "Employee",
+      "description": "An employee record in the HRMS system.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "avatar": { "type": "string" },
+        "role": { "type": "string" },
+        "nationalId": { "type": "string" },
+        "nationalIdExpiry": { "type": "string" },
+        "phone": { "type": "string" },
+        "joinDate": { "type": "string" },
+        "status": { "type": "string" },
+        "department": { "type": "string" },
+        "department2": { "type": "string" },
+        "certified": { "type": "boolean" },
+        "accumulatedAbsences": { "type": "number" },
+        "leaveStartDate": { "type": "string" },
+        "leaveEndDate": { "type": "string" },
+        "nationalIdImage": { "type": "string" },
+        "securityDocImage": { "type": "string" },
+        "leaveDuesRequested": { "type": "boolean" },
+        "leaveDuesRequestedDate": { "type": "string" },
+        "leaveDuesStatus": { "type": "string" },
+        "leaveDuesSalary": { "type": "number" },
+        "leaveDuesDays": { "type": "number" },
+        "leaveDuesReceivedYear": { "type": "string" },
+        "auditLog": { "type": "array" },
+        "attachments": { "type": "array" }
+      },
+      "required": ["id", "name", "role", "nationalId", "nationalIdExpiry", "phone", "joinDate", "status", "department", "certified"]
+    },
+    "document": {
+      "title": "Document",
+      "description": "An employee document template or uploaded security file.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "title": { "type": "string" },
+        "fileName": { "type": "string" },
+        "fileSize": { "type": "string" },
+        "securityLevel": { "type": "string" },
+        "badgeType": { "type": "string" },
+        "lastUpdated": { "type": "string" },
+        "previewName": { "type": "string" },
+        "previewId": { "type": "string" },
+        "previewBirthdate": { "type": "string" },
+        "previewExpiry": { "type": "string" },
+        "previewImage": { "type": "string" }
+      },
+      "required": ["id", "title", "fileName", "fileSize", "securityLevel", "badgeType", "lastUpdated", "previewName", "previewId", "previewBirthdate", "previewExpiry"]
+    }
+  },
+  "firestore": {
+    "/employees/{employeeId}": {
+      "schema": "employee",
+      "description": "Stores individual employee profiles."
+    },
+    "/documents/{documentId}": {
+      "schema": "document",
+      "description": "Stores document records and security items."
+    }
+  }
+}

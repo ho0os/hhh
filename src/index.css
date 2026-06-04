@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'IBM Plex Sans Arabic', "Inter", sans-serif;
+  --font-arabic: 'IBM Plex Sans Arabic', sans-serif;
+}
+
+body {
+  font-family: 'IBM Plex Sans Arabic', sans-serif;
+  -webkit-tap-highlight-color: transparent;
+  direction: rtl;
+}
+
+/* Custom scrollbars for clean dashboards */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 4px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #c5c5d3;
+  border-radius: 10px;
+}
+
+/* Print Specific Rules برای طباعة نموذج الإجازة */
+@media print {
+  body {
+    background-color: white !important;
+    color: black !important;
+  }
+  
+  /* Hide every element on the page */
+  body > div, body > main, body > nav, body > header, body > footer, #root > div {
+    display: none !important;
+  }
+  
+  /* Only display the container with id "printable-leave-form" */
+  #root, #printable-leave-form, #printable-leave-form * {
+    display: block !important;
+    visibility: visible !important;
+  }
+  
+  #printable-leave-form {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 10mm !important;
+    box-shadow: none !important;
+    border: none !important;
+    background: white !important;
+  }
+  
+  .print-hidden-element {
+    display: none !important;
+  }
+}
+

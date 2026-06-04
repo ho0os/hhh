@@ -1,0 +1,8 @@
+{
+  "name": "نظام إدارة شؤون الموظفين - SSCO",
+  "description": "نظام رقمي متكامل لإدارة شؤون الموظفين، والملفات الشخصية، والوثائق الرسمية، وإرسال التذكيرات والتنبيهات.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
